@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    --verydark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --white: #fff;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    background-color: var(--light-grayish-blue);
+    gap: 30px;
+}
+    
+.card-main{
+    width: 90%;
+    max-width: 375px;
+    background-color: var(--white);
+    border-radius:15px ;
+}
+
+.card-main__hero{
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.card-main__hero img{
+    width: 100%;
+    
+}
+
+.card-main__description{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-main__description h3{
+    color: var(--verydark-grayish-blue);
+}
+
+.card-main__description p{
+    color: var(--desaturated-dark-blue);
+}
+
+.card-main__autor{
+    padding: 0 25px 25px 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-main__autor-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.card-main__autor img:nth-child(1){
+    width: 45px;
+    border-radius: 50%;
+} 
+
+.card-main__autor-profile-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+    
+.card-main__autor-profile-name p{
+    text-align: left;
+    width: 100%;
+    font-weight: 700;
+    color: var(--verydark-grayish-blue)
+}
+
+.card-main__autor-profile-name p:nth-child(2){
+    color: var(--desaturated-dark-blue);
+    font-weight: 400;
+}
+
+.card-main__container-btn button{
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 25;
+}
+    
+#icon-share{
+    width: 20px;
+    height: auto;
+    
+}
+
+.card-main__autor{
+    position: relative;
+    
+}
+
+
+
+.card-main__share-menu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: var(--desaturated-dark-blue);
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+.card-main__share-menu.active {
+    display: flex; /* Cuando JS pone la clase 'active', el flex mata al none */
+}
+.card-main__share-menu.active p{
+    color: var(--grayish-blue);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.btn-share.active{
+    width: 20px;
+    height: auto;
+    background-color: red;
+    
+}
+
+
+
+.attribution a{
+    text-decoration: none;
+    color: var(--verydark-grayish-blue)
+}
+
+.attribution a:nth-of-type(2){
+    font-weight: 700;
+}
+    
+    
+@media (min-width:600px){
+
+    body{
+        flex-direction: column;
+    }
+
+    .card-main{
+        display: flex;
+        flex-direction: row;
+        width: 700px;
+        max-width: 1200px;
+        height: 350px;
+        
+    }
+
+    .card-main__hero{
+        width: 40%;
+        height: 100%;
+        
+        border-radius: 15px 0 0 15px;
+    }
+
+    .card-main__hero img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+
+    }
+        
+   .container-autor{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .btn-share{
+        transition: all 0.5s ease;
+    }
+    .btn-share:hover{
+        cursor: pointer;
+        transform: scale(1.5);
+        
+        
+    }
+    
+    
+}
